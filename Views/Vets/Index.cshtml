@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Ehrman_SD2.Models.Vet>
+
+@{
+    ViewBag.Title = "Vet Index";
+}
+
+<div class="alert alert-info">
+    <h1>Vet Index</h1>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover table-condensed">
+    <tr style="border-color: black">
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.vetFirstName)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.vetLastName)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.vetEmail)<p><span class="glyphicon glyphicon-envelope"></span></p>
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.employeeSince)
+        </th>
+        <th style="border-color: black"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="border-color: black">
+        <td style="border-color: black">
+            @Html.DisplayFor(modelItem => item.vetFirstName)
+        </td>
+        <td style="border-color: black">
+            @Html.DisplayFor(modelItem => item.vetLastName)
+        </td>
+        <td style="border-color: black">
+            @Html.DisplayFor(modelItem => item.vetEmail)
+        </td>
+        <td style="border-color: black">
+            @Html.DisplayFor(modelItem => item.employeeSince)
+        </td>
+        <td style="border-color: black">
+            @Html.ActionLink("Edit", "Edit", new { id=item.vetID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.vetID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.vetID })
+        </td>
+    </tr>
+}
+
+</table>

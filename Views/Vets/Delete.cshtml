@@ -1,0 +1,57 @@
+﻿@model Ehrman_SD2.Models.Vet
+
+@{
+    ViewBag.Title = "Delete Vet";
+}
+
+<div class="alert alert-warning">
+    <h1>Delete Vet</h1>
+</div>
+
+<h3>Are you sure you want to <span class="alert alert-danger">delete</span> this vet?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vetFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vetLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vetEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeSince)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeSince)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

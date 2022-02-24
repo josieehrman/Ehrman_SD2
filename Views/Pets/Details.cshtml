@@ -1,0 +1,75 @@
+﻿@model Ehrman_SD2.Models.Pet
+
+@{
+    ViewBag.Title = "Pet Details";
+}
+
+<div class="alert alert-info">
+    <h1>Pet Details</h1>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.petName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ownerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ownerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownerLastName)
+        </dd>
+
+        <dt> 
+            @Html.DisplayNameFor(model => model.ownerEmail)<p><span class="glyphicon glyphicon-envelope"></span></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ownerPhone)<p><span class="glyphicon glyphicon-phone"></span></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownerPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patientSince)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientSince)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petAnimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petAnimal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.petID }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+</p>

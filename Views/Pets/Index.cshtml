@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Ehrman_SD2.Models.Pet>
+
+@{
+    ViewBag.Title = "Pet Index";
+}
+
+<div class="alert alert-info">
+    <h1>Pet Index</h1>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover table-condensed">
+    <tr style="border-color: black">
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.petName)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.ownerFirstName)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.ownerLastName)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.ownerEmail)<p><span class="glyphicon glyphicon-envelope"></span></p>
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.ownerPhone)<p><span class="glyphicon glyphicon-phone"></span></p>
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.patientSince)
+        </th>
+        <th style="border-color: black">
+            @Html.DisplayNameFor(model => model.petAnimal)
+        </th>
+        <th style="border-color: black"></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr style="border-color: black">
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.petName)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.ownerFirstName)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.ownerLastName)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.ownerEmail)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.ownerPhone)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.patientSince)
+    </td>
+    <td style="border-color: black">
+        @Html.DisplayFor(modelItem => item.petAnimal)
+    </td>
+    <td style="border-color: black">
+        @Html.ActionLink("Edit", "Edit", new { id = item.petID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.petID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.petID })
+    </td>
+</tr>
+}
+
+</table>

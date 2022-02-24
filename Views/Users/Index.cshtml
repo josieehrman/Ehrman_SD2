@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ehrman_SD2.Models.User>
+
+@{
+    ViewBag.Title = "User Index";
+}
+
+<div class="alert alert-info">
+    <h2>User Index</h2>
+</div>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-hover table-condensed">
+        <tr style="border-color: black">
+            <th style="border-color: black">
+                @Html.DisplayNameFor(model => model.userFirstName)
+            </th>
+            <th style="border-color: black">
+                @Html.DisplayNameFor(model => model.userLastName)
+            </th>
+            <th style="border-color: black">
+                @Html.DisplayNameFor(model => model.userEmail)<p><span class="glyphicon glyphicon-envelope"></span></p>
+            </th>
+            <th style="border-color: black"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="border-color: black">
+                <td style="border-color: black">
+                    @Html.DisplayFor(modelItem => item.userFirstName)
+                </td>
+                <td style="border-color: black">
+                    @Html.DisplayFor(modelItem => item.userLastName)
+                </td>
+                <td style="border-color: black">
+                    @Html.DisplayFor(modelItem => item.userEmail)
+                </td>
+                <td style="border-color: black">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.userID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.userID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.userID })
+                </td>
+            </tr>
+        }
+
+    </table>

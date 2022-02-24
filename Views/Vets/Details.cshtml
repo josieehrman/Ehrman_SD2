@@ -1,0 +1,51 @@
+﻿@model Ehrman_SD2.Models.Vet
+
+@{
+    ViewBag.Title = "Vet Details";
+}
+
+<div class="alert alert-info">
+    <h1>Vet Details</h1>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vetFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vetLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vetEmail)<p><span class="glyphicon glyphicon-envelope"></span></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vetEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeSince)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeSince)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.vetID }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
